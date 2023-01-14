@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/media.css">
-    <title>HW13</title>
+    <title>HW14</title>
 </head>
-<!--починаючи з цього дз я буду кидати все в один репзиторый по гілкам-->
+
 <body>
     <header>
         <div class="logo">
@@ -20,18 +20,17 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#" target="_blank">Main</a></li>
-                <li><a href="#" target="_blank">Services</a></li>
-                <li><a href="#" target="_blank">Contacts</a></li>
+                <li><a class="link_header" href="#" target="_blank">Main</a></li>
+                <li><a class="link_header" href="#" target="_blank">Services</a></li>
+                <li><a class="link_header" href="#" target="_blank">Contacts</a></li>
             </ul>
         </nav>
         <div class="tel_lang">
             <div class="tel">
-                <img src="./img/phone.svg" alt="phonelogo">
                 <a href="tel:380999999999">+38 (099) 999-99-99</a>
             </div>
             <span class="lang">
-                <span>UA</span> | EN
+                <span>UA</span> EN
             </span>
         </div>
     </header>
@@ -162,15 +161,14 @@
                 <h2>Make an appointment</h2>
                 <p>Fill out the form and we will contact you to make an appointment</p>
                 <form>
-                    <div class="input_name">
-                        <span class="icon"><img src="./img/person.svg" alt="">|</span>
-                        <input type="text" name="name" placeholder="Your name">
+                    <div class="entry_field">
+                        <img class="icon" src="./img/person.svg" alt=""><span>|</span>
+                        <input class="input" type="text" name="name" placeholder="Your name">
                     </div>
-                    <div class="input_phone">
-                        <span class="icon"><img src="./img/phone.svg" alt="">|</span>
-                        <input type="text" name="phone" placeholder="Phone number">
+                    <div class="entry_field">
+                        <img class="icon" src="./img/phone.svg" alt=""><span>|</span>
+                        <input class="input" type="text" name="phone" placeholder="Phone number">
                     </div>
-                    
                     <button type="submit">SIGN UP</button>
                 </form>
             </div>
@@ -184,14 +182,14 @@
     <footer>
         <div class="footer">
             <div class="grid">
-                <div class="one">
+                <div class="logo_footer">
                     <img src="./img/Zub_footer.svg" alt="logo">
                     <span>DR. NIKOLA TESLA <br><span>dentist</span></span>
                 </div>
-                <div class="two">
-                    <span>Home</span>
-                    <span>Services</span>
-                    <span class="lang_footer"><span>UA</span> | EN</span>
+                <div class="menu_footer">
+                    <a href="#">Home</a>
+                    <a href="">Services</a> 
+                    <span class="lang_footer"><span class="lang_ua">UA</span><span>EN</span></span>
                 </div>
                 <div class="three">
                     <span>Working hours:</span><br>
@@ -202,21 +200,18 @@
                 <h3>CONTACTS</h3>
                 <p>Nikola Tesla</p>
                 <p>339 5th Ave, New York</p>
-                <p>
-                    <img src="./img/phone_footer.svg" alt="">
+                <p class="tel_icon link_icon">
                     <a href="tel:380999999999">+38 (099) 999-99-99</a>
                 </p>
-                <p>
+                <p class="messenger">
                     <a href="viber://chat?%2B380999999999"><img src="./img/viber.svg" alt="viber"></a>
                     <a href="https://t.me/%2B380999999999"><img src="./img/telegram.svg" alt="telegram"></a>
                     <a href="https://wa.me/380999999999"><img src="./img/whatsapp.svg" alt="whatsapp"></a>
                 </p>
-                <p>
-                    <img src="./img/inst.svg" alt="">
+                <p class="inst_icon link_icon">
                     <a href="https://www.instagram.com/dr.NikTes">dr.NikTes</a>
                 </p>
-                <p>
-                    <img src="./img/email.svg" alt="">
+                <p class="email_icon link_icon">
                     <a href="mailto:dr.niktes@gmail.com">dr.niktes@gmail.com</a>
                 </p>
                 <p>

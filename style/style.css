@@ -73,6 +73,14 @@ ul {
     padding: 17px 0 0 0;
 }
 
+.link_header {
+    transition: color 0.3s;
+}
+
+.link_header:hover {
+    color: var(--blue);
+}
+
 a {
     text-decoration: none;
     color: var(--grey);
@@ -86,15 +94,40 @@ a {
     padding-top: 17px;
 }
 
-header div.tel {
+.tel {
     height: max-content;
     align-items: center;
     display: flex;
     gap: 5px;
 }
 
+.tel a {
+    position: relative;
+}
+
+.tel a::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 20px;
+    left: -25px;
+    bottom: 0.5px;
+    background-image: url(../img/phone.svg);
+    background-size: contain;
+}
+
 .lang span{
     font-weight: 600;
+    position: relative;
+    padding-right: 15px;
+}
+
+.lang span::after {
+    content: '|';
+    position: absolute;
+    font-size: 18px;
+    top: -3px;
+    right: 3px;
 }
 
 /* Main */
@@ -143,6 +176,11 @@ h1 span {
     line-height: 60px;
     font-size: 19px;
     font-weight: 600;
+    transition: transform .2s;
+}
+
+.button a:hover {
+    transform: scale(1.05);
 }
 
 .button a:nth-child(1) {
@@ -309,7 +347,7 @@ section.section {
     transform: translate(-50%, -50%);
     
 }
-/* Тут чогось не вийшло як у Вас з годинником, кругляшки обертались по колу, але від головної точки, а не від центра кола */
+
 .point_plus {
     width: 20px;
     height: 20px;
@@ -441,8 +479,26 @@ form {
     gap: 70px;
 }
 
-form div {
+.entry_field {
     position: relative;
+}
+
+.entry_field span {
+    position: absolute;
+    font-size: 30px;
+    top: 47%;
+    left: 50px;
+    transform: translate(-50%, -50%);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.input {
     font-weight: 600;
     font-size: 19px;
     height: 57px;
@@ -451,42 +507,14 @@ form div {
     box-sizing: border-box;
     background: rgba(217, 217, 217, 0.71);
     border-radius: 8px;
-    color: rgba(27, 29, 31, 0.51);
+    padding-left: 60px;
 }
 
-/* тут я подивилась за посиланням як прибрати фоновий колір при автозаповненні, але поки що з цим не розібралась, можливо після 14 лекції зрозумію */
-input {
-    background: transparent;
-    border: none;
-    outline: none;
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    transform: translate(-50%, -50%);
-    height: 50px;
-    width: 150px;
-    font-size: 19px;
-    font-weight: 600;
-    box-sizing: border-box;
+input:focus {
+    outline: #46B1DE 2px solid;
 }
 
-
-.icon {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
-    left: 10px;
-    top: 10px;
-    font-size: 30px;
-    color: #1B1D1F;
-}
-
-.icon img{
-    padding-right: 10px;
-}
-
-button {
+.in_field button {
     width: 180px;
     height: 57px;
     background-color: #46B1DE;
@@ -528,7 +556,7 @@ footer{
     height: 245px;
 }
 
-.one {
+.logo_footer {
     grid-area: 1 / 1 / 2 / 3;
     display: flex;
     font-family: 'Sofia Sans', sans-serif;
@@ -538,25 +566,65 @@ footer{
     height: 91px;
 }
 
-.one span {
+.logo_footer span {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
     max-width: 425px;
 }
 
-.one span span {
+.logo_footer span span {
     font-size: 26.8525px;
     padding: 0;
 }
 
-.two {
+.menu_footer {
     display: flex;
     flex-direction: column;
     margin: 30px 160px 0 0;
     gap: 20px;
     font-size: 20px;
-    
+}
+
+.menu_footer a {
+    font-size: 20px;
+    color: #0F2D4A;
+    transition: color 0.3s;
+}
+
+.menu_footer a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.lang_footer {
+    display: flex;
+    gap: 20px;
+}
+
+.lang_ua {
+    position: relative;
+
+}
+
+.lang_ua::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 2px;
+    left: 35px;
+    width: 2px;
+    height: 20px;
+    background-color: #0F2D4A;
+}
+
+.lang_footer span {
+    transition: color 0.3s;
+}
+
+.lang_footer span:hover {
+    color: white;
+    cursor: pointer;
 }
 
 .three {
@@ -594,9 +662,63 @@ footer{
 .contact a {
     font-size: 20px;
     color: #FFFFFF;
+    position: relative;
 }
 
 .contact p:last-child {
     align-self: flex-end;
     font-size: 10px;
+}
+
+.messenger {
+    height: 30px;
+}
+
+.messenger a:last-child {
+    height: 30px;
+}
+
+.link_icon {
+    position: relative;
+    padding-left: 35px;
+}
+
+.link_icon::before {
+    position: absolute;
+    left: -1px;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+}
+
+.tel_icon::before {
+    content: '';
+    background-image: url(../img/phone_footer.svg);
+}
+
+.inst_icon::before {
+    content: '';
+    background-image: url(../img/inst.svg);
+}
+
+.email_icon::before {
+    content: '';
+    background-image: url(../img/email.svg);
+    left: -2px;
+    bottom: 0.5px;
+}
+
+.link_icon a::after {
+    content: '';
+    display: block;
+	position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-out;
+}
+
+.link_icon a:hover::after {
+    width: 100%;
 }

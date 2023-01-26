@@ -1,0 +1,12 @@
+%title {
+    font-weight: 400;
+    font-size: 34px;
+    text-align: center;
+}
+
+%sectionMargin {
+    margin: 90px auto 0 auto;
+    @media(max-width: 992px) {
+        margin: 30px auto 0 auto;
+    }
+}
